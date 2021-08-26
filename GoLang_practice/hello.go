@@ -13,10 +13,16 @@
 // (install go, obviously)
 // to run: BASH > cd > "go run hello.go"
 // "go run ." // saw this elsewhere, not sure if runs all files, looks for some kind of Go-"project", or what...
+// ^^ does not run the hello.go file here if ran in same folder.
+// / / / / /  / / / / /  / / / / /  / / / / /  / / / / /  / / / / /
+// don't want to run this here? Run on the web @  https://play.golang.org/
+// / / / / /  / / / / /  / / / / /  / / / / /  / / / / /  / / / / /
+
 package main
 
 import (
 	"fmt"
+	// very annoing: cntrl + S in VS Code removes import lines with syntax problems...
 )
 
 var printme = "'variable'"                         // language looks like JS here, no?
@@ -26,7 +32,10 @@ func main() { // main() runs like python's if __name__ == __main__
 	fmt.Print("that line")
 	fmt.Println("hello world") //prints on SAME line as above, new line AFTER this ends
 	fmt.Println(printme)
-	fmt.Print(concatenate_test)
+	fmt.Println(concatenate_test)
+
+	fmt.Print(fmt.Print()) // prints None output, as print returned nothing: 0 <nil>
+	fmt.Print(fmt.Print)   // prints function location: 0xfa1540, for example
 
 	// single quotes =(
 	// fmt.Print('this line') 		// .\hello.go:18:12: more than one character in rune literal
