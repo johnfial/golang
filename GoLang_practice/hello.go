@@ -22,6 +22,8 @@ package main
 
 import (
 	"fmt"
+	m "math"
+	"os"
 	// very annoing: cntrl + S in VS Code removes import lines with syntax problems...
 )
 
@@ -40,4 +42,17 @@ func main() { // main() runs like python's if __name__ == __main__
 	// single quotes =(
 	// fmt.Print('this line') 		// .\hello.go:18:12: more than one character in rune literal
 	// fmt.Printf('number bytes') // .\hello.go:20:13: more than one character in rune literal
+}
+
+func beyondHello() {
+	var x int
+	x = 33
+	y := 4 // wtf does := do? // TODO
+	sum, prod := learnMultiple(x, y) // returns two values
+	fmt.Println("sum is", sum, "product is:" prod) // looks like normal concatenation
+	// learnTypes() // wtf does this do?
+}
+
+func learnMultiple(x, y int) (sum, prod int) {
+	return x + y, x * y
 }
