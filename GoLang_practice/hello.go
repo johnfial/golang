@@ -22,8 +22,6 @@ package main
 
 import (
 	"fmt"
-	m "math"
-	"os"
 	// very annoing: cntrl + S in VS Code removes import lines with syntax problems...
 )
 
@@ -36,8 +34,10 @@ func main() { // main() runs like python's if __name__ == __main__
 	fmt.Println(printme)
 	fmt.Println(concatenate_test)
 
-	fmt.Print(fmt.Print()) // prints None output, as print returned nothing: 0 <nil>
-	fmt.Print(fmt.Print)   // prints function location: 0xfa1540, for example
+	// fmt.Print(fmt.Print()) // prints None output, as print returned nothing: 0 <nil>
+	// fmt.Print(fmt.Print)   // prints function location: 0xfa1540, for example
+	fmt.Println("~~~~~~~~~~~~~~~~~~~~~~~~~")
+	beyondHello()
 
 	// single quotes =(
 	// fmt.Print('this line') 		// .\hello.go:18:12: more than one character in rune literal
@@ -47,12 +47,14 @@ func main() { // main() runs like python's if __name__ == __main__
 func beyondHello() {
 	var x int
 	x = 33
-	y := 4 // wtf does := do? // TODO
-	sum, prod := learnMultiple(x, y) // returns two values
-	fmt.Println("sum is", sum, "product is:" prod) // looks like normal concatenation
+	y := 4                                          // wtf does := do? // TODO
+	sum, prod := learnMultiple(x, y)                // returns two values
+	fmt.Println("sum is", sum, "product is:", prod) // looks like normal concatenation
 	// learnTypes() // wtf does this do?
 }
 
-func learnMultiple(x, y int) (sum, prod int) {
-	return x + y, x * y
+// returns easily return multiple values.
+// do they
+func learnMultiple(x, y int) (sum, prod, diff int) {
+	return x + y, x * y, x - y
 }
